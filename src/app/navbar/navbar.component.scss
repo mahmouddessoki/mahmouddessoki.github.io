@@ -1,0 +1,26 @@
+.dropdown-menu{
+    min-width: 5.5rem;
+}
+.cursor-pointer{
+    cursor: pointer;
+}
+.navbar{
+    padding: {
+        left: 8rem !important;
+        right: 8rem !important;
+    }
+    box-shadow: 1px 1px 16px 0px #000;
+   
+}
+
+@media screen and (max-width : 767px)
+{
+    .navbar{
+        padding: {
+            left: 3rem !important;
+            right: 3rem !important;
+        }
+
+    }
+
+}

@@ -1,0 +1,50 @@
+<section id="particle">
+    <div class="sign">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-md-6 mx-auto my-5">
+                    <form [formGroup]="myLoginForm" (ngSubmit)="LoginData(myLoginForm)" >
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Enter Your Email"
+                                formControlName = "email" [ngClass] = "myLoginForm.get('email').status == 'VALID'?'is-valid':'is-invalid'">
+                            <div class="alert alert-danger" 
+                            *ngIf = "myLoginForm.get('email').status != 'VALID' && myLoginForm.get('email').touched">
+                                Please Enter a valid email
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="password" class="form-control" placeholder="Enter Your Password"
+                            formControlName = "password" [ngClass] = "myLoginForm.get('password').status == 'VALID'?'is-valid':'is-invalid'">
+                            <div class="alert alert-danger"
+                            *ngIf = "myLoginForm.get('password').status != 'VALID' && myLoginForm.get('password').touched">
+                                Please Enter a valid password
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-info btn-block" [disabled]="myLoginForm.status == 'INVALID'">
+                            <span *ngIf="!checked;else waiting">Sign In</span>
+                            <ng-template #waiting>
+                                <span>wating........</span>
+                            </ng-template>
+                        </button>
+                    
+                        <div *ngIf="checkedResponse" class="mt-2">
+                            <div class="alert alert-success" 
+                                *ngIf = "response == 'success';else wrong">
+                                {{response}}
+                            </div>
+                            <ng-template #wrong>
+                                <div class="alert alert-danger">
+                                    {{response}}
+                                </div>
+                            </ng-template>
+
+                        </div>
+                    
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</section>

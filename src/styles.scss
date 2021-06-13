@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+    overflow-x: hidden ;
+}
+.sign{
+    position: absolute;
+    width: 100%;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    
+}
+#particle,#profile,#noFound{
+    min-height: 100vh !important;
+    background-color: #343a40!important;
+}

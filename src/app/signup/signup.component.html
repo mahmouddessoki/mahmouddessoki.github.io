@@ -1,0 +1,68 @@
+<section id="particle">
+    <div class="sign my-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mx-auto">
+                    <form [formGroup]="mySignUpForm" (ngSubmit) = "signUpData(mySignUpForm)">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input class="form-control my-2" placeholder="Enter Your FristName"
+                                   formControlName = "first_name">
+                                <div class="alert alert-danger text-uppercase"
+                                *ngIf = "mySignUpForm.get('first_name').status != 'VALID' && mySignUpForm.get('first_name').touched">
+                                    Please Enter valid FristName
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <input class="form-control my-2" placeholder="Enter Your LastName"
+                                  formControlName = "last_name">
+                                <div class="alert alert-danger text-uppercase"
+                                *ngIf = "mySignUpForm.get('last_name').status != 'VALID' && mySignUpForm.get('last_name').touched">
+                                    Please Enter valid LastName
+                                </div>
+                            </div>
+                        </div>
+                        <input class="form-control my-2" placeholder="Enter Your Email"
+                          formControlName = "email">
+                        <div class="alert alert-danger text-uppercase"
+                        *ngIf = "mySignUpForm.get('email').status != 'VALID' && mySignUpForm.get('email').touched">
+                            Please Enter valid email
+                        </div>
+                        <input class="form-control my-2" placeholder="Enter Your age" 
+                            formControlName = "age">
+                        <div class="alert alert-danger text-uppercase"
+                        *ngIf = "mySignUpForm.get('age').status != 'VALID' && mySignUpForm.get('age').touched">
+                            Please Enter valid age
+                        </div>
+                        <input class="form-control my-2" placeholder="Enter Your Password" 
+                            formControlName = "password">
+                        <div class="alert alert-danger text-uppercase "
+                        *ngIf = "mySignUpForm.get('password').status != 'VALID' && mySignUpForm.get('password').touched">
+                            Please Enter valid Password
+                        </div>
+                        <button type="submit" class="btn btn-info btn-block" [disabled] = "mySignUpForm.status == 'INVALID'">
+
+                            <span *ngIf="!checked;else waiting">Sign Up</span>
+                            <ng-template #waiting>
+                                <span>wating........</span>
+                            </ng-template>
+                        </button>
+
+                        <div *ngIf="checkedResponse" class="mt-2">
+                            <div class="alert alert-success" 
+                                *ngIf = "response == 'success';else wrong">
+                                {{response}}
+                            </div>
+                            <ng-template #wrong>
+                                <div class="alert alert-danger">
+                                    {{response}}
+                                </div>
+                            </ng-template>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

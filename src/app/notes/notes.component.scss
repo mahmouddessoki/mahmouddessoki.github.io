@@ -1,0 +1,42 @@
+.note
+{
+    min-height: 200px;
+    background-color: rgb(255, 255, 255);
+}
+i,.dropdown-item,.note{
+    cursor: pointer;
+}
+
+.note p .btn{
+    background-color: black;
+    color: white;
+    border: none;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+.note p .btn:hover{
+    background-color: white;
+    color: black;
+    border : 1px solid black;
+}
+#exampleModal .modal-body{
+    word-wrap: break-word;
+}
+.clr{
+    clear : both;
+}
+.noNotes{
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    font-size: 8rem;
+    text-align: center;
+    color: azure;
+    font-family: 'Dancing Script', cursive;
+}
+@media screen and (max-width:767px)
+{
+    .noNotes{
+        font-size:3rem !important;
+    }
+}
